@@ -92,6 +92,11 @@ class UsersViewUsers extends JView
 			$filter = ' INNER JOIN #__session AS s ON s.userid = a.id';
 		}
 
+		// ensure filter_order has a valid value.
+		if (!in_array($filter_order, array('a.name', 'a.username', 'a.block', 'groupname', 'a.email', 'a.lastvisitdate', 'a.id'))) {
+			$filter_order = 'a.name';
+		}
+
 		$orderby = ' ORDER BY '. $filter_order .' '. $filter_order_Dir;
 		$where = ( count( $where ) ? ' WHERE (' . implode( ') AND (', $where ) . ')' : '' );
 

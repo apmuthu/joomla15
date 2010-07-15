@@ -128,12 +128,12 @@ class HTML_modules
 					<td>
 					<?php
 					if (  JTable::isCheckedOut($user->get ('id'), $row->checked_out ) ) {
-						echo $row->title;
+						echo htmlspecialchars($row->title);
 					} else {
 						?>
-						<span class="editlinktip hasTip" title="<?php echo JText::_( 'Edit Module' );?>::<?php echo $row->title; ?>">
+						<span class="editlinktip hasTip" title="<?php echo JText::_( 'Edit Module' );?>::<?php echo htmlspecialchars($row->title); ?>">
 						<a href="<?php echo $link; ?>">
-							<?php echo $row->title; ?></a>
+							<?php echo htmlspecialchars($row->title); ?></a>
 						</span>
 						<?php
 					}

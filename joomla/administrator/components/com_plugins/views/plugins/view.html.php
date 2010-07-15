@@ -73,12 +73,17 @@ class PluginsViewPlugins extends JView
 		}
 
 		$where 		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
+
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('p.name', 'p.published', 'p.ordering', 'groupname', 'p.folder', 'p.element', 'p.id'))) {
+			$filter_order = 'p.folder';
+		}
+
 		if ($filter_order == 'p.ordering') {
 			$orderby = ' ORDER BY p.folder, p.ordering '. $filter_order_Dir;
 		} else {
 			$orderby = ' ORDER BY '. $filter_order .' '. $filter_order_Dir .', p.ordering ASC';
 		}
-
 
 		// get the total number of records
 		$query = 'SELECT COUNT(*)'

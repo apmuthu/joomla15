@@ -45,6 +45,11 @@ class ContactViewCategory extends JView
 
 		$limit = $mainframe->getUserStateFromRequest('com_contact.'.$this->getLayout().'.limit', 'limit', $default_limit, 'int');
 
+		// sanitize $orderBy
+		if (!in_array($filter_order, array('cd.ordering', 'cd.name', 'cd.con_position'))) {
+			$filter_order = 'cd.ordering';
+		}
+
 		// query options
 		$options['aid'] 		= $user->get('aid', 0);
 		$options['category_id']	= $categoryId;

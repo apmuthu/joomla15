@@ -92,8 +92,8 @@ class MenusModelItem extends JModel
 		}
 
 		// Override the current item's menutype field if defined in the request
-		if ($menu_type = JRequest::getString('menutype')) {
-			$table->menutype = $menu_type;
+		if ($menutype = JRequest::getVar('menutype', '', '', 'menutype')) {
+			$table->menutype = $menutype;
 		}
 
 		switch ($table->type)
@@ -144,7 +144,7 @@ class MenusModelItem extends JModel
 	{
 		$item				= &$this->getItem();
 		$return['option']	= JRequest::getCmd('expand');
-		$menutype			= JRequest::getString('menutype');
+		$menutype			= JRequest::getVar('menutype', '', '', 'menutype');
 
 		if ($return['option'])
 		{

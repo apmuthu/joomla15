@@ -114,6 +114,11 @@ function showNewsFeeds(  )
 		}
 	}
 
+	// sanitize $filter_order
+	if (!in_array($filter_order, array('a.name', 'a.published', 'a.ordering', 'catname', 'a.numarticles', 'a.cache_time', 'a.id'))) {
+		$filter_order = 'a.ordering';
+	}
+
 	$where 		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
 	if ($filter_order == 'a.ordering'){
 		$orderby 	= ' ORDER BY catname, a.ordering';

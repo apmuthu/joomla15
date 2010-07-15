@@ -44,6 +44,11 @@ class WeblinksViewWeblinks extends JView
 		}
 		$search = JString::strtolower($search);
 
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('a.title', 'a.published', 'a.ordering', 'category', 'a.hits', 'a.id'))) {
+			$filter_order = 'a.ordering';
+		}
+
 		// Get data from the model
 		$items		= & $this->get( 'Data');
 		$total		= & $this->get( 'Total');

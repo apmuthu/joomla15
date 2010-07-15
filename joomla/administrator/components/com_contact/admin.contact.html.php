@@ -114,12 +114,12 @@ class HTML_contact
 					<td>
 					<?php
 					if (JTable::isCheckedOut($user->get ('id'), $row->checked_out )) :
-						echo $row->name;
+						echo htmlspecialchars($row->name);
 					else :
 						?>
-						<span class="editlinktip hasTip" title="<?php echo JText::_( 'Edit Contact' );?>::<?php echo $row->name; ?>">
+						<span class="editlinktip hasTip" title="<?php echo JText::_( 'Edit Contact' );?>::<?php echo htmlspecialchars($row->name); ?>">
 						<a href="<?php echo $link; ?>">
-							<?php echo $row->name; ?></a> </span>
+							<?php echo htmlspecialchars($row->name); ?></a> </span>
 						<?php
 					endif;
 					?>

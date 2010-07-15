@@ -59,6 +59,11 @@ class BannerControllerClient extends JController
 		}
 
 		$where		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
+
+		if (!in_array($filter_order, array('a.name', 'a.contact', 'bid', 'a.cid'))) {
+			$filter_order = 'a.name';
+		}
+
 		$orderby = ' ORDER BY '. $filter_order .' '. $filter_order_Dir .', a.cid';
 
 		// get the total number of records

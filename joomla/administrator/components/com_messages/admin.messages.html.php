@@ -100,7 +100,7 @@ class HTML_messages
 					</td>
 					<td>
 						<a href="#edit" onclick="return listItemTask('cb<?php echo $i;?>','view')">
-							<?php echo $row->subject; ?></a>
+							<?php echo htmlspecialchars($row->subject); ?></a>
 					</td>
 					<td align="center">
 						<a href="javascript: void(0);">
@@ -209,7 +209,7 @@ class HTML_messages
 					<?php echo JText::_( 'Subject' ); ?>:
 				</td>
 				<td bgcolor="#ffffff">
-					<?php echo $row->subject;?>
+					<?php echo htmlspecialchars($row->subject);?>
 				</td>
 			</tr>
 			<tr>
@@ -227,7 +227,7 @@ class HTML_messages
 		<input type="hidden" name="boxchecked" value="1" />
 		<input type="hidden" name="cid[]" value="<?php echo $row->message_id; ?>" />
 		<input type="hidden" name="userid" value="<?php echo $row->user_id_from; ?>" />
-		<input type="hidden" name="subject" value="Re: <?php echo $row->subject; ?>" />
+		<input type="hidden" name="subject" value="Re: <?php echo htmlspecialchars($row->subject); ?>" />
 		<?php echo JHTML::_( 'form.token' ); ?>
 		</form>
 		<?php

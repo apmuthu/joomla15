@@ -137,6 +137,8 @@ class HTML_admin_misc
 		$fullhelpurl = $helpurl . '/index2.php?option=com_content&amp;task=findkey&amp;pop=1&amp;keyref=';
 
 		$helpsearch = JRequest::getString('helpsearch');
+		$helpsearch = str_replace(array('=', '<', '"'), '', $helpsearch);
+
 		$page		= JRequest::getCmd('page', 'joomla.whatsnew15.html');
 		$toc		= getHelpToc( $helpsearch );
 		$lang		=& JFactory::getLanguage();
@@ -159,7 +161,7 @@ class HTML_admin_misc
 						<td>
 							<strong><?php echo JText::_( 'Search' ); ?>:</strong>
 							<input class="text_area" type="hidden" name="option" value="com_admin" />
-							<input type="text" name="helpsearch" value="<?php echo $helpsearch;?>" class="inputbox" />
+							<input type="text" name="helpsearch" value="<?php echo htmlspecialchars($helpsearch);?>" class="inputbox" />
 							<input type="submit" value="<?php echo JText::_( 'Go' ); ?>" class="button" />
 							<input type="button" value="<?php echo JText::_( 'Clear Results' ); ?>" class="button" onclick="f=document.adminForm;f.helpsearch.value='';f.submit()" />
 						</td>

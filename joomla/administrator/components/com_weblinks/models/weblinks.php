@@ -147,6 +147,11 @@ class WeblinksModelWeblinks extends JModel
 		$filter_order		= $mainframe->getUserStateFromRequest( $option.'filter_order',		'filter_order',		'a.ordering',	'cmd' );
 		$filter_order_Dir	= $mainframe->getUserStateFromRequest( $option.'filter_order_Dir',	'filter_order_Dir',	'',				'word' );
 
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('a.title', 'a.published', 'a.ordering', 'category', 'a.hits', 'a.id'))) {
+			$filter_order = 'a.ordering';
+		}
+
 		if ($filter_order == 'a.ordering'){
 			$orderby 	= ' ORDER BY category, a.ordering '.$filter_order_Dir;
 		} else {

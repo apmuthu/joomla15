@@ -100,6 +100,11 @@ class ModulesController extends JController
 			}
 		}
 
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('m.title', 'm.published', 'm.ordering', 'groupname', 'm.position', 'pages', 'm.module', 'm.id'))) {
+			$filter_order = 'm.position';
+		}
+
 		$where 		= ' WHERE ' . implode( ' AND ', $where );
 		$join 		= ' ' . implode( ' ', $joins );
 		if ($filter_order == 'm.ordering') {

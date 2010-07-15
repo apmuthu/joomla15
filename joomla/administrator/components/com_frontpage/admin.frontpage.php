@@ -135,6 +135,12 @@ function viewFrontPage( $option )
 	}
 
 	$where 		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
+
+	// ensure we have a good vale for $filter_order
+	if (!in_array($filter_order, array('c.title', 'c.state', 'fpordering', 'groupname', 'c.id', 'sect_name', 'cc.name', 'author'))) {
+		$filter_order = 'fpordering';
+	}
+
 	$orderby 	= ' ORDER BY '. $filter_order .' '. $filter_order_Dir .', fpordering';
 
 	// get the total number of records

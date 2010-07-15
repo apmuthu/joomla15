@@ -95,6 +95,12 @@ function showMessages( $option )
 	}
 
 	$where 		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
+
+	// sanitize $filter_order``
+	if (!in_array($filter_order, array('a.subject', 'a.state', 'user_from', 'a.date_time'))) {
+		$filter_order = 'a.date_time';
+	}
+
 	$orderby 	= ' ORDER BY '. $filter_order .' '. $filter_order_Dir .', a.date_time DESC';
 
 	$query = 'SELECT COUNT(*)'

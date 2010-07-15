@@ -63,6 +63,12 @@ class PollViewPolls extends JView
 		}
 
 		$where 		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
+
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('m.title', 'm.published', 'a.ordering', 'catname', 'm.voters', 'numoptions', 'm.lag', 'm.id'))) {
+			$filter_order = 'm.id';
+		}
+
 		$orderby 	= ' ORDER BY '. $filter_order .' '. $filter_order_Dir;
 
 		$query = 'SELECT COUNT(m.id)'

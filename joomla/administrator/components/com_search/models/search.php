@@ -58,6 +58,11 @@ class SearchModelSearch extends JModel
 		$search = JString::strtolower($search);
 		$showResults		= JRequest::getInt('search_results');
 
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('search_term', 'hits'))) {
+			$filter_order = 'hits';
+		}
+
 		// table ordering
 		if ( $filter_order_Dir == 'ASC' ) {
 			$this->lists['order_Dir'] = 'ASC';
@@ -75,6 +80,7 @@ class SearchModelSearch extends JModel
 		}
 
 		$where 		= ( count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '' );
+
 		$orderby 	= ' ORDER BY '. $filter_order .' '. $filter_order_Dir .', hits DESC';
 
 		// get the total number of records

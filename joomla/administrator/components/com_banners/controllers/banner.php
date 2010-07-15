@@ -78,6 +78,12 @@ class BannerControllerBanner extends JController
 		}
 
 		$where		= count( $where ) ? ' WHERE ' . implode( ' AND ', $where ) : '';
+
+		// sanitize $filter_order
+		if (!in_array($filter_order, array('b.name', 'c.name', 'cc.title', 'b.showBanner', 'b.ordering', 'b.sticky', 'b.impmade', 'b.clicks', 'b.bid'))) {
+			$filter_order = 'cc.title';
+		}
+
 		$orderby	= ' ORDER BY '. $filter_order .' '. $filter_order_Dir .', b.ordering';
 
 		// get the total number of records

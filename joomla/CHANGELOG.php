@@ -1,6 +1,6 @@
 <?php
 /**
-* @version		$Id: CHANGELOG.php 17301 2010-05-27 21:08:11Z ian $
+* @version		$Id: CHANGELOG.php 18151 2010-07-15 09:33:47Z dextercowley $
 * @package		Joomla
 * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
@@ -35,6 +35,23 @@ $ -> Language fix or change
 ^ -> Change
 - -> Removed
 ! -> Note
+
+
+-------------------- 1.5.19 Stable Release [15-July-2010] ------------------
+
+15-July-2010 Mark Dexter
+# [#21419] Incorrect Joomla! Community Magazine address
+^ [#21421] *Credits.php update for 1.5.19
+
+14-July-2010 Ian MacLennan
+ + [#21404] New installation language bs-BA
+ + [#20984] New installation language ta-IN 
+
+14-July-2010 Louis Landry
+ + [#21416] Mootools 1.2.4 Upgrade Plugin
+
+02-June-2010 Sam Moffat
+ ! Line ending fix for some XML/HTML files
 
 -------------------- 1.5.18 Stable Release [27-May-2010] ------------------
 
