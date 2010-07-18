@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: controller.php 15095 2010-02-27 14:14:06Z ian $
+ * @version		$Id: controller.php 18162 2010-07-16 07:00:47Z ian $
  * @package		Joomla
  * @subpackage	Menus
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.

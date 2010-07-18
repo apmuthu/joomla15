@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: helper.php 14401 2010-01-26 14:10:00Z louis $
+ * @version		$Id: helper.php 18162 2010-07-16 07:00:47Z ian $
  * @package		Joomla
  * @subpackage	Content
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
