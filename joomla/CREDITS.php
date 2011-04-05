@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: CREDITS.php 19327 2010-11-02 13:49:13Z infograf768 $
+ * @version		$Id: CREDITS.php 20439 2011-01-25 17:42:22Z infograf768 $
  * @package		Joomla
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
  * @license		GNU/GPL, see LICENSE.php
