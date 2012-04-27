@@ -38,14 +38,14 @@ class HTML_ArtAdminer {
 			<fieldset class="adminform">
 			<table class="admintable">
 				<tbody>
-					<tr>
+					<!--<tr>
 						<td width="20%" class="key" title="CSS file. Default values: adminer1.css, adminer2.css, adminer3.css">
 							<label for="cssfile">CSS file</label>
 						</td>
 						<td>
 							<input class="inputbox" type="text" name="cssfile" id="cssfile" size="40" maxlength="255" value="<?php echo $row->cssfile; ?>" />
 						</td>
-					</tr>
+					</tr>-->
 					<tr>
 						<td width="20%" class="key" title="Auto login. When set adminer will automatically connect to database using credentials stored in Joomla!">
 							<label for="autologin">Auto login</label>
@@ -69,10 +69,10 @@ class HTML_ArtAdminer {
 		$row =& JTable::getInstance('artadminer_setting', 'Table');
 					
 		$row->load(1);
-		$adminerUrl = JURI::base() . 'components/' . $option . '/adminer.php?cssfile=' . '/administrator/components/com_artadminer/css/' . $row->cssfile;
+		$adminerUrl = JURI::base() . 'components/' . $option . '/adminer.php';
 		$cfg = new JConfig();
 		if ($row->autologin) {
-			$adminerUrl .= '&server=' . $cfg->host . '&username=' . $cfg->user . '&password=' . $cfg->password;
+			$adminerUrl .= '?server=' . $cfg->host . '&username=' . $cfg->user . '&password=' . $cfg->password;
 		}
 		
 		?>

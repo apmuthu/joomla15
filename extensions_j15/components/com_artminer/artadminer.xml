@@ -7,10 +7,20 @@
 	<license>GPL</license>
 	<authorEmail>info@artetics.com</authorEmail>
 	<authorUrl>www.artetics.com</authorUrl>
-	<version>1.2.1</version>
+	<version>1.3.0</version>
 	<description><![CDATA[Art Adminer - Smart Joomla! database tool.<br /><br />&copy;&nbsp;<a href="http://www.artetics.com">Artetics.com</a> - Start Point For Your Website.]]></description>
 	<installfile>install.artadminer.php</installfile>
 	<uninstallfile>uninstall.artadminer.php</uninstallfile> 
+  <install>
+    <sql>
+        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+      </sql>
+    </install>
+    <uninstall>
+      <sql>
+        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+      </sql>
+  </uninstall>
     <files>
       <folder>sql</folder>
     </files>
