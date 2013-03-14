@@ -7,7 +7,7 @@
 	<license>GPL</license>
 	<authorEmail>info@artetics.com</authorEmail>
 	<authorUrl>www.artetics.com</authorUrl>
-	<version>1.4.0</version>
+	<version>1.6.1</version>
 	<description><![CDATA[Art Adminer - Smart Joomla! database tool.<br /><br />&copy;&nbsp;<a href="http://www.artetics.com">Artetics.com</a> - Start Point For Your Website.]]></description>
 	<installfile>install.artadminer.php</installfile>
 	<uninstallfile>uninstall.artadminer.php</uninstallfile> 
@@ -28,7 +28,7 @@
 		<menu task="adminer">ArtAdminer</menu>
 	    <submenu>
 	    	<menu task="adminer">Adminer</menu>
-	    	<menu task="settings">Settings</menu>
+	    	<!--<menu task="settings">Settings</menu>-->
 	    </submenu>
 		<files folder="admin">
 			<filename>install.artadminer.php</filename>
@@ -42,7 +42,9 @@
 			<filename>css/adminer1.css</filename>
 			<filename>css/adminer2.css</filename>
 			<filename>css/adminer3.css</filename>
-      <folder>sql</folder>
+			<folder>sql</folder>
+			<folder>adminer</folder>
+			<folder>plugins</folder>
 		</files>
     <install>
       <sql>
