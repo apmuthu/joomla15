@@ -36,19 +36,32 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+22-Mar-2013 Ap.Muthu
+ +$ CHANGELOG.txt
+ # PHP4 fix for password encryption
+ # DBI Fix
+ # URI Fix
+ # Fixes from Forum
+ #	Breadcrumbs Last Seperator,
+ #	Initial date in javascript calendar,
+ #	Email-address within brackets,
+ #	SubMenu in Administrator,
+ #	com_content findkey method can retrieve unpublished or trashed articles,
+ #	Display Unpublish Section & Categories on article submit
+
 -------------------- 1.5.26 Stable Release [27-March-2012] ------------------
 
 -------------------- 1.5.25 Stable Release [14-November-2011] ------------------
 
 -------------------- 1.5.24 Stable Release [17-October-2011] ------------------
 
-30-Sept-2011 Jean-Marie Simonet
+30-Sep-2011 Jean-Marie Simonet
  +$ Adding ka-GE installation language
 
-19-Apri-2011 Andrew Eddie
+19-Apr-2011 Andrew Eddie
  # Fixed [#21622] 303 redirections cause page subresources to be reloaded on WebKit browsers (Nicholas Dionysopoulos).
 
--------------------- 1.5.23 Stable Release [04-March-2011] ------------------
+-------------------- 1.5.23 Stable Release [04-April-2011] ------------------
 
 04-Apr-2011 Mark Dexter
  # [#25450] Mootools 1.2.4 Squeezebox Problems in MSIE 9
