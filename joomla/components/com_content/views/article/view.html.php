@@ -291,7 +291,7 @@ class ContentViewArticle extends ContentView
 		$javascript = "onchange=\"changeDynaList( 'catid', sectioncategories, document.adminForm.sectionid.options[document.adminForm.sectionid.selectedIndex].value, 0, 0);\"";
 
 		$query = 'SELECT s.id, s.title' .
-				' FROM #__sections AS s' .
+				' FROM #__sections AS s WHERE `published`= 1' .
 				' ORDER BY s.ordering';
 		$db->setQuery($query);
 
@@ -322,7 +322,7 @@ class ContentViewArticle extends ContentView
 
 		$query = 'SELECT id, title, section' .
 				' FROM #__categories' .
-				' WHERE section IN ( \''.$section_list.'\' )' .
+				' WHERE `published`= 1 AND section IN ( \''.$section_list.'\' )' .
 				' ORDER BY ordering';
 		$db->setQuery($query);
 		$cat_list = $db->loadObjectList();

@@ -39,7 +39,7 @@ class JHTMLEmail
         // obfuscate prefix
         $prefix = JHTMLEmail::_convertEncoding( $prefix );
 
-		$replacement 	= "\n <script language='JavaScript' type='text/javascript'>";
+		$replacement 	= "<script language='JavaScript' type='text/javascript'>";
 		$replacement 	.= "\n <!--";
 		$replacement 	.= "\n var prefix = '$prefix';";
         $replacement    .= "\n var suffix = '$suffix';";
@@ -76,7 +76,7 @@ class JHTMLEmail
 		$replacement 	.= "\n </script>";
 
 		// XHTML compliance `No Javascript` text handling
-		$replacement 	.= "<script language='JavaScript' type='text/javascript'>";
+		$replacement 	.= "\n <script language='JavaScript' type='text/javascript'>";
 		$replacement 	.= "\n <!--";
 		$replacement 	.= "\n document.write( '<span style=\'display: none;\'>' );";
 		$replacement 	.= "\n //-->";

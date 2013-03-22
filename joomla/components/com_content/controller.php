@@ -327,7 +327,7 @@ class ContentController extends JController
 		$keyref	= $db->Quote( '%keyref='.$db->getEscaped( $keyref, true ).'%', false );
 		$query	= 'SELECT id' .
 				' FROM #__content' .
-				' WHERE attribs LIKE '.$keyref;
+				' WHERE state=1 AND attribs LIKE '.$keyref;
 		$db->setQuery($query);
 		$id = (int) $db->loadResult();
 
