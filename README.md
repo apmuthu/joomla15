@@ -1,8 +1,15 @@
 joomla15
 ========
-Joomla! v1.5.x was by far the most popular and widely used CMS for quite a while from 2008 till the end of 2012. 
-Many sites will need to be migrated from Joomla v1.5.x to the more recent v2.5.x and 3.x versions. 
-The Joomla File Repository (http://joomlacode.org/gf/project/joomla/frs/) does not provide a consolidated list of links for older versions but does provide all the older versions if logged in. 
+<ul>
+<li>Joomla! v1.5.x was by far the most popular and widely used CMS for quite a while from 2008 till the end of 2012.</li>
+<li>Many sites will need to be migrated from Joomla v1.5.x to the more recent v2.5.x and 3.x versions.</li>
+<li>The Joomla File Repository (http://joomlacode.org/gf/project/joomla/frs/) does not provide a consolidated list of links for older versions but does provide all the older versions if logged in.</li>
+<li>Since the code here is not on the Official Joomla.org site, the reader / user may possibly consider it a fork even though the code has been taken from the official sources and the fixes are from the official forums / bug tracks. The decision is left to the end user.</li>
+<li>Since the code now resides on GitHub, it will be easier for the community to fork it from here and develop further, independant of any official site.</li>
+<li>The reason why the official joomlacode.org requires a login to view older versions is that since they do not develop it any more and consequently do not release any new versions in this and other older series, a layer of authentication appear justifiable to prevent any unintended use of unmaintained and possibly vulnerable code.</li>
+<li>The open availability here is to allow the user to make the decision to fork / maintain / develop this version and let the users be totally solely responsible for their actions.</li>
+<li>Any gross code changes resulting in a different CMS altogether would be advised to choose another project name to avoid confusion.</li>
+</ul>
 
 <p><a href="http://forge.joomla.org/" 
 title="http://forge.joomla.org/" rel="nofollow"><b>http://forge.joomla.org/</b></a>
