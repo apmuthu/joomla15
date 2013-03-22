@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: uri.php 21079 2011-04-04 20:54:40Z dextercowley $
+ * @version		$Id: uri.php 19058 2010-10-08 04:15:39Z dextercowley $
  * @package		Joomla.Framework
  * @subpackage	Environment
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
@@ -157,10 +157,11 @@ class JURI extends JObject
 				 * running on IIS and will therefore need to work some magic with the SCRIPT_NAME and
 				 * QUERY_STRING environment variables.
 				 */
-				
+				  if (isset($_SERVER['QUERY_STRING'])) {
 				 	if (strlen($_SERVER['QUERY_STRING']) && strpos($_SERVER['REQUEST_URI'], $_SERVER['QUERY_STRING']) === false) {
 						$theURI .= '?'.$_SERVER['QUERY_STRING'];
 					}
+				  }
 
 				}
 				 else
