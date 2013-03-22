@@ -1,9 +1,9 @@
 <?php
 /**
-* @version		$Id: mysqli.php 16385 2010-04-23 10:44:15Z ian $
+* @version		$Id: mysqli.php 11316 2008-11-27 03:11:24Z ian $
 * @package		Joomla.Framework
 * @subpackage	Database
-* @copyright	Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.
+* @copyright	Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -46,6 +46,13 @@ class JDatabaseMySQLi extends JDatabase
 	var $_nameQuote		= '`';
 
 	/**
+	 * Options - parameters needed to make DB connection
+	 *
+	 * @var array
+	 */
+	var $_options		= array();
+	
+	/**
 	* Database object constructor
 	*
 	* @access	public
@@ -55,6 +62,12 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function __construct( $options )
 	{
+		$this->_options = $options;
+		$this->makeConnection();
+	}
+	
+	function makeConnection () {
+		$options = $this->_options;
 		$host		= array_key_exists('host', $options)	? $options['host']		: 'localhost';
 		$user		= array_key_exists('user', $options)	? $options['user']		: '';
 		$password	= array_key_exists('password',$options)	? $options['password']	: '';
@@ -221,6 +234,7 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function query()
 	{
+
 		if (!is_object($this->_resource)) {
 			return false;
 		}
@@ -228,7 +242,7 @@ class JDatabaseMySQLi extends JDatabase
 		// Take a local copy so that we don't modify the original query and cause issues later
 		$sql = $this->_sql;
 		if ($this->_limit > 0 || $this->_offset > 0) {
-			$sql .= ' LIMIT ' . max($this->_offset, 0) . ', ' . max($this->_limit, 0);
+			$sql .= ' LIMIT '.$this->_offset.', '.$this->_limit;
 		}
 		if ($this->_debug) {
 			$this->_ticker++;
@@ -237,10 +251,18 @@ class JDatabaseMySQLi extends JDatabase
 		$this->_errorNum = 0;
 		$this->_errorMsg = '';
 		$this->_cursor = mysqli_query( $this->_resource, $sql );
-
 		if (!$this->_cursor)
 		{
 			$this->_errorNum = mysqli_errno( $this->_resource );
+			// If error is lost connection, try reconnecting and repeating the operation
+			if (2006 == $this->_errorNum OR 2013 == $this->_errorNum) {
+				$this->makeConnection();
+				if (!$this->_resource) JError::raiseError(500, 'JDatabaseMySQL::query: '.$this->_errorNum.' - '.$this->_errorMsg );
+				$this->_errorNum = 0;
+				$this->_cursor = mysqli_query($this->_resource, $sql);
+				if ($this->_cursor) return $this->_cursor;
+				else $this->_errorNum = mysql_errno( $this->_resource );
+			}
 			$this->_errorMsg = mysqli_error( $this->_resource )." SQL=$sql";
 
 			if ($this->_debug) {
@@ -368,13 +390,12 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadResult()
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$ret = null;
-		if ($row = mysqli_fetch_row( $cur )) {
-			$ret = $row[0];
-		}
+		$row = mysqli_fetch_row( $cur );
+		if ($row) $ret = $row[0];
 		mysqli_free_result( $cur );
 		return $ret;
 	}
@@ -386,7 +407,7 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadResultArray($numinarray = 0)
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$array = array();
@@ -405,13 +426,12 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadAssoc()
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$ret = null;
-		if ($array = mysqli_fetch_assoc( $cur )) {
-			$ret = $array;
-		}
+		$array = mysqli_fetch_assoc( $cur );
+		if ($array) $ret = $array;
 		mysqli_free_result( $cur );
 		return $ret;
 	}
@@ -425,7 +445,7 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadAssocList( $key='' )
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$array = array();
@@ -448,13 +468,12 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadObject( )
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$ret = null;
-		if ($object = mysqli_fetch_object( $cur )) {
-			$ret = $object;
-		}
+		$object = mysqli_fetch_object( $cur );
+		if ($object) $ret = $object;
 		mysqli_free_result( $cur );
 		return $ret;
 	}
@@ -471,7 +490,7 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadObjectList( $key='' )
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$array = array();
@@ -494,11 +513,12 @@ class JDatabaseMySQLi extends JDatabase
 	 */
 	function loadRow()
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$ret = null;
-		if ($row = mysqli_fetch_row( $cur )) {
+		$row = mysqli_fetch_row( $cur );
+		if ($row) {
 			$ret = $row;
 		}
 		mysqli_free_result( $cur );
@@ -517,7 +537,7 @@ class JDatabaseMySQLi extends JDatabase
 	*/
 	function loadRowList( $key=null )
 	{
-		if (!($cur = $this->query())) {
+		if (!is_object($cur = $this->query())) {
 			return null;
 		}
 		$array = array();
