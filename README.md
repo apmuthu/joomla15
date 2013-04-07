@@ -12,7 +12,7 @@ joomla15
 </ul>
 
 <p>
-Download <b>joomla15 master</b> as <a href="https://github.com/apmuthu/joomla15/archive/master.zip><b>zip</b></a> or <a href=https://github.com/apmuthu/joomla15/archive/master.tar.gz><b>tar.gz</b></a> file.
+Download <b>joomla15 master</b> as <a href="https://github.com/apmuthu/joomla15/archive/master.zip"><b>zip</b></a> or <a href="https://github.com/apmuthu/joomla15/archive/master.tar.gz><b>tar.gz"</b></a> file.
 </p>
 
 <p><a href="http://forge.joomla.org/" 
