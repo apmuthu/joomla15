@@ -11,6 +11,10 @@ joomla15
 <li>Any gross code changes resulting in a different CMS altogether would be advised to choose another project name to avoid confusion.</li>
 </ul>
 
+<p>
+Download <b>joomla15 master</b> as <a href="https://github.com/apmuthu/joomla15/archive/master.zip><b>zip</b></a> or <a href=https://github.com/apmuthu/joomla15/archive/master.tar.gz><b>tar.gz</b></a> file.
+</p>
+
 <p><a href="http://forge.joomla.org/" 
 title="http://forge.joomla.org/" rel="nofollow"><b>http://forge.joomla.org/</b></a>
 is an alias of <a href="http://joomlacode.org/"
