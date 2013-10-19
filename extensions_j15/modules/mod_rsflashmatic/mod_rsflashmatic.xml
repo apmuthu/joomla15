@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>RS-FlashMatic</name>
+	<author>RS Web Solutions</author>
+	<creationDate>September 2010</creationDate>
+	<copyright>Copyright (c) 2010-2015 RS Web Solutions - Development Team</copyright>
+	<license>@license GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>support@rswebsols.com</authorEmail>
+	<authorUrl>http://www.rswebsols.com</authorUrl>
+	<version>1.3</version>
+	<description>RS-FlashMatic is a flash slideshow module. This is a Joomla extension specially developed for Joomla version 1.5.x. This is a highly customizable XML Image Rotator with more than 35 XML options, including the masking size and speed. You can control the position of the elements on the screen, the number of images, as well as the colors - all from XML. You can use this module in any size you need.</description>
+	<files>
+		<filename module="mod_rsflashmatic">mod_rsflashmatic.php</filename>
+		<filename>index.html</filename>
+		<filename>js/swfobject.js</filename>
+		<filename>js/index.html</filename>
+		<filename>swf/expressInstall.swf</filename>
+		<filename>swf/preview.swf</filename>
+		<filename>swf/index.html</filename>
+		<filename>xml/index.html</filename>
+	</files>
+	<params>
+		<param type="spacer" default="&lt;b&gt;&lt;a target='_blank' href='http://www.rswebsols.com/rsflashmatic-support'&gt;Read Documentation/Configuration Steps&lt;/a&gt;&lt;/b&gt;" />
+		<param type="spacer" default="" />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;SWFOBJECT Insertion:&lt;/b&gt;&lt;br /&gt;By default this is 'YES'. That means the module will add the required SWFOBJECT JavaScript library file. But if you think the SWFOBJECT is already inserted in your website (by your template or by any other component/module/plugin) then you can set it to 'NO' so it will prevent the double insertion of the same file." />
+		<param name="rsws_insertSWFOBJECT" type="list" default="1" label="Insert SWFOBJECT File" description="By default this is 'YES'. That means the module will add the required SWFOBJECT JavaScript library file. But if you think the SWFOBJECT is already inserted in your website (by your template or by any other component/module/plugin) then you can set it to 'NO' so it will prevent the double insertion of the same file.">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;General Configuration&lt;/b&gt;" />
+		<param name="rsws_width" type="text" default="600" label="Slideshow Width" description="Width of the Slideshow in pixel (default value: 600)" />
+		<param name="rsws_height" type="text" default="300" label="Slideshow Height" description="Height of the Slideshow in pixel (default value: 300)" />
+		<param name="rsws_random" type="list" default="2" label="Show Images Randomly" description="Show Images Randmoly or Not. (default value: NO)">
+			<option value="1">YES</option>
+			<option value="2">NO</option>
+		</param>
+		<param name="rsws_backgroundColor" type="text" default="FFFFFF" label="Background Color" description="Color of the background in hex-code, do not add # (default value: FFFFFF)" />
+		<param name="rsws_backgroundTransparency" type="text" default="100" label="Background Transparency" description="Transparency of the background. Any value from 0 to 100. 0 means no transparency, 100 means fully transparent. (default value: 100)" />
+		<param name="rsws_loaderColor" type="text" default="000000" label="Loader Color" description="Color of the Loader in hex-code, do not add # (default value: 000000)" />
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;Cell Configuration&lt;/b&gt;&lt;br /&gt;In time of transition from one image to other, the image will splits into small pieces/cells. Here you can configure the behavior of those cells" />
+		<param name="rsws_cellWidth" type="text" default="50" label="Cell Width" description="Width of Cell in pixel (default value: 50)" />
+		<param name="rsws_cellHeight" type="text" default="50" label="Cell Height" description="Height of Cell in pixel (default value: 50)" />
+		<param name="rsws_showMinTime" type="text" default="0.2" label="Cell Show Time Minimum" description="Minimum Show Time of Cell in seconds (default value: 0.2)" />
+		<param name="rsws_showMaxTime" type="text" default="1.5" label="Cell Show Time Maximum" description="Maximum Show Time of Cell in seconds (default value: 1.5)" />
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;Cell Border Configuration&lt;/b&gt;&lt;br /&gt;In time of transition from one image to other, the image will splits into small pieces/cells. Here you can configure the border style of those cells" />
+		<param name="rsws_blur" type="text" default="50" label="Blur" description="Blurriness of the border. Any value from 0 to 100. (default value: 50)" />
+		<param name="rsws_netTime" type="text" default="0.5" label="Border Display Time" description="Display Time of Border in seconds (default value: 0.5)" />
+		<param name="rsws_alphaNet" type="text" default="80" label="Border Prominency" description="How prominent the border will display. Any value from 0 to 100. 0 means border will not display, 100 means border is fully prominent. (default value: 80)" />
+		<param name="rsws_netColor" type="text" default="000000" label="Border Color" description="Color of the Border in hex-code, do not add # (default value: 000000)" />
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;Navigation Bar Controller Style&lt;/b&gt;&lt;br /&gt;Here you can control all settings of Navigation/Controller Bar." />
+		<param name="rsws_controllerVisible" type="list" default="1" label="Display Controller" description="Display Controller or Not. (default value: YES)">
+			<option value="1">YES</option>
+			<option value="2">NO</option>
+		</param>
+		<param name="rsws_controllerBackgroundVisible" type="list" default="1" label="Display Controller Background" description="Display Background of the Controller or Not. (default value: YES)">
+			<option value="1">YES</option>
+			<option value="2">NO</option>
+		</param>
+		<param name="rsws_prevNextVisible" type="list" default="1" label="Display Previous-Next Button" description="Display Previous-Next Button or Not. (default value: YES)">
+			<option value="1">YES</option>
+			<option value="2">NO</option>
+		</param>
+		<param name="rsws_playBtVisible" type="list" default="1" label="Display Play-Pause Button" description="Display Play-Pause Button or Not. (default value: YES)">
+			<option value="1">YES</option>
+			<option value="2">NO</option>
+		</param>
+		<param name="rsws_autoPlay" type="list" default="1" label="Auto Play" description="Start Auto Playing the Slides or not. (default value: YES)">
+			<option value="1">YES</option>
+			<option value="2">NO</option>
+		</param>
+		<param name="rsws_navigationButtonsColor" type="text" default="000000" label="Navigation Button Color" description="Color of the Navigation Button in hex-code, do not add # (default value: 000000)" />
+		<param name="rsws_controllerDistanceX" type="text" default="10" label="Controller Left-Right Padding" description="Padding/Spacing of the Controller Bar in Left and Right. Value in pixel. (default value: 10)" />
+		<param name="rsws_controllerDistanceY" type="text" default="10" label="Controller Padding from Bottom" description="Padding/Spacing of the Controller Bar from Bottom. Value in pixel. (default value: 10)" />
+		<param name="rsws_controllerHeight" type="text" default="27" label="Controller Height" description="Height of the Controller in pixel. (default value: 27)" />
+		<param name="rsws_distanceBetweenControllerElements" type="text" default="10" label="Distance Between Controller Buttons" description="Distance Between Controller Buttons in pixel. (default value: 10)" />
+		<param name="rsws_normalColor" type="text" default="000000" label="Navigation Text Color" description="Color of the Navigation Text in hex-code, do not add # (default value: 000000)" />
+		<param name="rsws_overColor" type="text" default="473C31" label="Navigation Text Over Color" description="Color of the Navigation Text when you Mouse-Over, in hex-code, do not add # (default value: 473C31)" />
+		<param name="rsws_selectedTextColor" type="text" default="FFFFFF" label="Selected Navigation Text Color" description="Color of the Navigation Text when Selected, in hex-code, do not add # (default value: FFFFFF)" />
+		<param name="rsws_selectedButtonAlpha" type="text" default="70" label="Background Prominency of Selected Text" description="How prominent the background will display of selected texts. Any value from 0 to 100. 0 means background will not display, 100 means background is fully prominent. (default value: 70)" />
+		<param name="rsws_distanceBetweenThumbs" type="text" default="7" label="Distance Between Navigation Texts" description="Distance Between Controller Buttons in pixel. (default value: 7)" />
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;Image Caption Display Settings&lt;/b&gt;&lt;br /&gt;Here you can set the display style of image caption i.e. the display style of Title, Description and Read-More text." />
+		<param name="rsws_captionY" type="text" default="10" label="Caption Box Padding from Top" description="Padding/Spacing of the Caption Box from Top. Value in pixel. (default value: 10)" />
+		<param name="rsws_captionX" type="text" default="10" label="Caption Box Padding from Right" description="Padding/Spacing of the Caption Box from Right. Value in pixel. (default value: 10)" />
+		<param name="rsws_captionWidth" type="text" default="390" label="Width of Caption Box" description="Width of Caption Box in pixel. (default value: 390)" />
+		<param name="rsws_buttonText" type="text" default="read more" label="'Read More' Button Text" description="Text of 'Read More' Button. (default value: read more)" />
+		<param name="rsws_btnNormalColor" type="text" default="FFFFFF" label="'Read More' Text Color" description="Color of 'Read More' text, in hex-code, do not add # (default value: FFFFFF)" />
+		<param name="rsws_btnOverColor" type="text" default="999999" label="'Read More' Text Over Color" description="Color of 'Read More' text when mouse-over, in hex-code, do not add # (default value: 999999)" />
+		<param name="rsws_readMoreBackAlpha" type="text" default="80" label="Background Prominency of 'Read More' Button" description="How prominent the background will display of 'Read More' button. Any value from 0 to 100. 0 means background will not display, 100 means background is fully prominent. (default value: 80)" />
+		<param name="rsws_readMoreBackColor" type="text" default="473C31" label="Background Color of 'Read More' button" description="Background Color of 'Read More' button, in hex-code, do not add # (default value: 473C31)" />
+		<param name="rsws_btnSpacingW" type="text" default="50" label="'Read More' Text Left-Right Padding" description="Padding/Spacing of the text from Left and Right of 'Read More' Button. Value in pixel. (default value: 50)" />
+		<param name="rsws_btnSpacingH" type="text" default="5" label="'Read More' Text Top-Bottom Padding" description="Padding/Spacing of the text from Top and Bottom of 'Read More' Button. Value in pixel. (default value: 5)" />
+		<param name="rsws_paddingX" type="text" default="20" label="Caption Box Inner Left-Right Padding" description="Inner Padding/Spacing of the Caption Box from Left and Right. Value in pixel. (default value: 20)" />
+		<param name="rsws_paddingY" type="text" default="15" label="Caption Box Inner Top-Bottom Padding" description="Inner Padding/Spacing of the Caption Box from Top and Bottom. Value in pixel. (default value: 15)" />
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b&gt;Image Path&lt;/b&gt;" />
+		<param name="rsws_imageshow" type="radio" default="1" label="Image Configuration" description="Choose how you wish to configure the image display. The first one is easy to configure. For advanced users the second option will give much more advanced configurable options.">
+			<option value="1">BASIC (Display all images from a folder that I will specify below.)</option>
+			<option value="0">ADVANCED (Display only those images that I will specify below)</option>
+		</param>
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b style='color:green; font-size:125%;' &gt;Start of Image Configuration - BASIC&lt;/b&gt;" />
+		<param type="spacer" default="Use this section if you previously selected the 'Image Configuration' as BASIC" />
+		<param size="60" name="rsws_basic_folder" type="text" default="images/stories/slideshow/" label="Image Folder" description="Specify the path of image folder. (default value: images/stories/slideshow/)" />
+		<param size="60" name="rsws_basic_url" type="text" default="" label="Link to images" description="If you wish to redirect the visitors to a particular url after clicking the images, then please specify the url here. (Example: http://www.yoursite.com/)" />
+		<param name="rsws_basic_url_target" type="list" default="_blank" label="Open link in" description="Open the link in the same window or in a new window.">
+			<option value="_blank">In a new window</option>
+			<option value="_self">In the same window</option>
+		</param>
+		<param name="rsws_basic_bar_color" type="text" default="FFFFFF" label="Navigation/Controller Bar Background Color" description="Background color of Navigation Bar Controller in hex-code, do not add # (default: FFFFFF)" />
+		<param name="rsws_basic_bar_transparency" type="text" default="40" label="Navigation/Controller Bar Transparency" description="Transparency of Navigation Bar Controller. Any value from 0 to 100. 0 means not transparent, 100 means fully transparent. (default: 40)" />
+		<param name="rsws_basic_slideshowTime" type="text" default="4" label="Slideshow Time" description="How many seconds one image will display before moving on to the next image. (default: 4)" />
+		<param type="spacer" default="&lt;b style='color:green; font-size:125%;' &gt;End of Image Configuration - BASIC&lt;/b&gt;" />
+		
+		<param type="spacer" default="" />
+		<param type="spacer" default="" />
+		<param type="spacer" default="&lt;b style='color:green; font-size:125%;'&gt;Start of Image Configuration - ADVANCED&lt;/b&gt;" />
+		<param type="spacer" default="Use this section if you previously selected the 'Image Configuration' as ADVANCED" />
+		<param name="rsws_adv_path" type="textarea" default="{images/stories/slideshow/image1.jpg}&lt;br /&gt;{images/stories/slideshow/image2.jpg}" label="Image(s) Path &lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{Image A}&lt;br /&gt;{Image B}" description="Specify the relative path of all your images, within {}. Do not add absolute path. Only add relative path. (Example: {images/stories/slideshow/image1.jpg} {images/stories/slideshow/image2.jpg} )" rows="10" cols="40" />
+		<param name="rsws_adv_title" type="textarea" default="{Sample Title 1}&lt;br /&gt;{Sample Title 2}" label="Image(s) Title&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{Title A}&lt;br /&gt;{Title B}" description="Specify the title of the images, within {}. (Example: {Sample Title 1} {Sample Title 1} )" rows="10" cols="40" />		
+		
+		<param name="rsws_adv_caption" type="textarea" default="{Sample Caption 1}&lt;br /&gt;{Sample Caption 2}" label="Image(s) Caption/Description&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{Caption A}&lt;br /&gt;{Caption B}" description="Specify the caption/description of the images, within {}. (Example: {Sample Caption 1} {Sample Caption 1} )" rows="10" cols="40" />
+		<param name="rsws_adv_link" type="textarea" default="{http://www.example1.com/}&lt;br /&gt;{http://www.example2.com/}" label="Link to Image(s)&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{http://www.test1.com/}&lt;br /&gt;{http://www.test2.com/}" description="Specify the link of the images, within {}. (Example: {http://www.example1.com/} {http://www.example2.com/} )" rows="10" cols="40" />
+		<param name="rsws_adv_target" type="textarea" default="{_self}&lt;br /&gt;{_blank}" label="Open link(s) in&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{_self}&lt;br /&gt;{_blank}" description="Open the link(s) in the same window or in a new window, within {}. You have 2 options '_blank' or '_self'. (Example: {_self} {_blank} )" rows="10" cols="40" />
+		<param name="rsws_adv_bar_color" type="textarea" default="{FFFFFF}&lt;br /&gt;{FFFFFF}" label="Navigation/Controller Bar Background Color(s)&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{FFFFFF}&lt;br /&gt;{FEFEFE}" description="Background color(s) of Navigation Bar Controller in hex-code, within {}, do not add #. (Example: {FFFFFF} {FEFEFE} )" rows="10" cols="40" />
+		<param name="rsws_adv_bar_transparency" type="textarea" default="{40}&lt;br /&gt;{40}" label="Navigation/Controller Bar Transparency(s)&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{40}&lt;br /&gt;{50}" description="Specify the Navigation/Controller Bar Transparency, within {}. Any value from 0 to 100. 0 means not transparent, 100 means fully transparent. (Example: {40} {50} )" rows="10" cols="40" />
+		<param name="rsws_adv_caption_color" type="textarea" default="{FFFFFF}&lt;br /&gt;{FFFFFF}" label="Caption Box(es) Background Color&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{FFFFFF}&lt;br /&gt;{FEFEFE}" description="Specify the background color of caption box(es), within {}. (Example: {FFFFFF} {FEFEFE} )" rows="10" cols="40" />
+		<param name="rsws_adv_caption_transparency" type="textarea" default="{60}&lt;br /&gt;{60}" label="Caption Box(es) Background Transparency&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{60}&lt;br /&gt;{50}" description="Specify the background transparency of caption box(es), within {}. Any value from 0 to 100. 0 means not transparent, 100 means fully transparent. (Example: {60} {50} )" rows="10" cols="40" />
+		<param name="rsws_adv_stroke_color" type="textarea" default="{FFFFFF}&lt;br /&gt;{FFFFFF}" label="Caption Box(es) Border Color&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{FFFFFF}&lt;br /&gt;{FEFEFE}" description="Specify the border color of caption box(es), within {}. (Example: {FFFFFF} {FEFEFE} )" rows="10" cols="40" />
+		<param name="rsws_adv_stroke_transparency" type="textarea" default="{60}&lt;br /&gt;{60}" label="Caption Box(es) Border Prominency&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{60}&lt;br /&gt;{70}" description="Specify the border prominency of caption box(es), within {}. Any value from 0 to 100. 0 means border will not display, 100 means border will fully prominent. (Example: {60} {70} )" rows="10" cols="40" />
+		<param name="rsws_adv_slideshowTime" type="textarea" default="{4}&lt;br /&gt;{4}" label="Slideshow Time(s)&lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;{4}&lt;br /&gt;{5}" description="How many seconds image(s) will display before moving on to the next image, within {}. (Example: {4} {5} )" rows="10" cols="40" />		
+		<param type="spacer" default="&lt;b style='color:green; font-size:125%;'&gt;End of Image Configuration - ADVANCED&lt;/b&gt;" />
+		<param type="spacer" default="" />
+	</params>
+	
+	<params group="advanced">
+		<param name="cache" type="list" default="0" label="Caching" description="Module Caching">
+			<option value="0">No caching</option>
+			<option value="1">Use global</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+		<param name="admin_modified" type="hidden" default="1" />
+	</params>
+</install>

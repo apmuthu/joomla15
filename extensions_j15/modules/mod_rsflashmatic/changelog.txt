@@ -1,0 +1,25 @@
+--------------------------
+#----- Version 1.3 ------#
+--------------------------
+1. Fixed some minor bugs.
+2. Fixed the functions that are deprecated from php version 5.3.0
+3. Upgraded the swfobject version from 2.1 to 2.2
+
+
+--------------------------
+#----- Version 1.2 ------#
+--------------------------
+1. Added the option to enable/disable swfobject insertion.
+2. Added link of documentation.
+
+
+--------------------------
+#----- Version 1.1 ------#
+--------------------------
+1. Fixed some path related issues.
+
+
+--------------------------
+#----- Version 1.0 ------#
+--------------------------
+This is the first release.
