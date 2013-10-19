@@ -3,7 +3,7 @@
 	<name>RS-FlashMatic</name>
 	<author>RS Web Solutions</author>
 	<creationDate>September 2010</creationDate>
-	<copyright>Copyright (c) 2010-2015 RS Web Solutions - Development Team</copyright>
+	<copyright>Copyright (c) 2010-2013 RS Web Solutions - Development Team</copyright>
 	<license>@license GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>support@rswebsols.com</authorEmail>
 	<authorUrl>http://www.rswebsols.com</authorUrl>
@@ -20,7 +20,7 @@
 		<filename>xml/index.html</filename>
 	</files>
 	<params>
-		<param type="spacer" default="&lt;b&gt;&lt;a target='_blank' href='http://www.rswebsols.com/rsflashmatic-support'&gt;Read Documentation/Configuration Steps&lt;/a&gt;&lt;/b&gt;" />
+		<param type="spacer" default="&lt;b&gt;&lt;a target='_blank' href='http://www.rswebsols.com/doc/rsflashmatic-support'&gt;Read Documentation/Configuration Steps&lt;/a&gt;&lt;/b&gt;" />
 		<param type="spacer" default="" />
 		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
 		<param type="spacer" default="" />

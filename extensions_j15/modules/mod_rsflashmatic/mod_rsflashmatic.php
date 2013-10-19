@@ -279,4 +279,7 @@ $rsws_js_controller = 'var cacheBuster = "?t=" + Date.parse(new Date()); var sta
 
 $rsws_document->addScriptDeclaration($rsws_js_controller);
 ?>
-<div id="RSFlashmaticModule<?php echo $module->id; ?>"><p>In order to view this object you need Flash Player 9+ support!</p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/></a><p><?php echo base64_decode('UG93ZXJlZCBieQ==').' <a href="'.base64_decode('aHR0cDovL3d3dy5yc3dlYnNvbHMuY29t').'" target="_blank">'.base64_decode('UlMgV2ViIFNvbHV0aW9ucw==').'</a>'; ?></p></div>
+<div id="RSFlashmaticModule<?php echo $module->id; ?>">
+	<p>In order to view this object you need Flash Player 9+ support!</p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/></a>
+	<p>Powered by <a href="http://www.rswebsols.com" target="_blank">RS Web Solutions</a></p>
+</div>
