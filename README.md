@@ -16,6 +16,10 @@ Download <b>joomla15 master</b> as <a href="https://github.com/apmuthu/joomla15/
 </p>
 
 <p>
+Joomla 1.5 API: <a href="http://docs.huihoo.com/api/joomla/1.5/">Archive</a> - May not be visible from some countries IPs.
+</p>
+
+<p>
 Learn Joomla from: <a href="http://www.siteground.com/tutorials/joomla15/">Tutorials</a>
 </p>
 
